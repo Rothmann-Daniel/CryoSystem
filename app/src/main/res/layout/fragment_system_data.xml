@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SystemDataFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_full_tank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/typeTank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:drawablePadding="8dp"
+        android:text="Type of tank"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/currentLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="50L"
+        android:textColor="@color/blue"
+        android:textSize="32sp"
+
+        app:layout_constraintEnd_toEndOf="@+id/typeTank"
+        app:layout_constraintStart_toStartOf="@+id/typeTank"
+        app:layout_constraintTop_toBottomOf="@+id/typeTank" />
+
+    <TextView
+        android:id="@+id/currentTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="-195°C"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/currentLevel"
+        app:layout_constraintStart_toStartOf="@+id/currentLevel"
+        app:layout_constraintTop_toBottomOf="@+id/currentLevel" />
+
+    <TextView
+        android:id="@+id/alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Alarm: High Level"
+        android:textColor="@color/red_alert"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/currentTemp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="10L"
+        android:textColor="@color/red_alert"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/alarm"
+        app:layout_constraintStart_toStartOf="@+id/alarm"
+        app:layout_constraintTop_toBottomOf="@+id/alarm" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_battery"
+        app:layout_constraintBottom_toBottomOf="@+id/currentTemp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/currentLevel"
+        app:layout_constraintTop_toTopOf="@+id/currentLevel"
+        app:tint="@color/battery_status" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toTopOf="@id/button_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:itemCount="3"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:layout_height="300dp"
+        tools:listitem="@layout/system_data_item" />
+
+
+    <!-- Горизонтальная цепочка кнопок внизу экрана -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Кнопка 1 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_settings"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="Settings"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_settings"
+            app:iconGravity="textTop"
+            app:iconPadding="4dp"
+            app:iconTint="@color/black"
+            app:strokeColor="@color/blue" />
+
+        <!-- Кнопка 2 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_history"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="Mute"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_volume_off"
+            app:iconGravity="textTop"
+            app:iconPadding="4dp"
+            app:iconTint="@color/black"
+            app:strokeColor="@color/blue" />
+
+        <!-- Кнопка 3 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_alerts"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Manual"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_manual"
+            app:iconGravity="textTop"
+            app:iconPadding="4dp"
+            app:iconTint="@color/black"
+            app:strokeColor="@color/blue" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

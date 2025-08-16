@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#1E7AC5</color>
+    <color name="red_alert">#92000A</color>
+    <color name="battery_status">#4ACA11</color>
+    <color name="background_card">#E4EAEF</color>
+</resources>
