@@ -1,6 +1,6 @@
 package com.example.cryosystems.domain.model
 
-class Model(
+data class Model(
     val id: Int,
     val name: String,
     val type: String,
