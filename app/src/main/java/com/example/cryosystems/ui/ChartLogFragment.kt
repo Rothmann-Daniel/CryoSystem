@@ -7,25 +7,40 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.cryosystems.R
+import com.example.cryosystems.databinding.FragmentChartLogBinding
 
 class ChartLogFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ChartLogFragment()
-    }
+    private var _binding: FragmentChartLogBinding? = null
+    private val binding get() = _binding!!
+
+
 
     private val viewModel: ChartLogViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_chart_log, container, false)
+       _binding = FragmentChartLogBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
+
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    companion object {
+        fun newInstance() = ChartLogFragment()
+    }
+
+
 }

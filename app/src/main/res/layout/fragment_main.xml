@@ -9,11 +9,11 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:alpha="0.7"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
         android:backgroundTint="#2B2D30"
         android:scaleType="fitXY"
-        android:src="@drawable/cryo_background_main"
+        android:src="@drawable/b3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +111,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="@color/background_card"
+        android:backgroundTint="#A9CBD6"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView"
@@ -122,12 +122,12 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="System" />
+            android:text="@string/system" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ChartLog" />
+            android:text="@string/chartlog" />
 
     </com.google.android.material.tabs.TabLayout>
 
